@@ -1,0 +1,28 @@
+version: "3"
+services:
+  control-node:
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+    expose:
+      - "0-65535"
+    hostname: "control-node"
+    image: "ansible-playground"
+    volumes:
+      - "./:/workdir"
+    working_dir: "/workdir"
+  managed-node-1:
+    expose:
+      - "0-65535"
+    hostname: "managed-node-1"
+    image: "ansible-playground"
+  managed-node-2:
+    expose:
+      - "0-65535"
+    hostname: "managed-node-2"
+    image: "ansible-playground"
+  managed-node-3:
+    expose:
+      - "0-65535"
+    hostname: "managed-node-3"
+    image: "ansible-playground"
